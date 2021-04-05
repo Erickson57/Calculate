@@ -5,20 +5,31 @@
 .App {
     max-width: 295px;
     margin: 10px auto;
-    height: 90vh;
+    height: 50%;
     width: 100%;
     background: black;
     color: white;
-    border-radius: 10%;
+    border-radius: 5%;
     padding: 12px;
     position: relative;
+    overflow: hidden;
 }
 .App.modetwo {
-    max-width: 500px;
+    max-width: 470px;
+}
+
+.App.modetwo .mode {
+    left: calc(50% - 120px);
+}
+
+
+.App.modethree .mode {
+    left: calc(50% - 120px);
 }
 
 .top {
     position: absolute;
+    top: 110px;
     width: 180px;
     height: 35px;
     left: 35px;
@@ -29,7 +40,7 @@
     font-size: 60px;
     margin-bottom: 5px;
     text-align: right;
-    margin-top: 20px;
+    margin-top: 125px;
 }
 
 .buttons {
@@ -41,25 +52,38 @@
     font-size: 20px;
 }
 .mode {
-    margin-right: 50px;
+    position: absolute;
+    text-align: center;
+    top: 0;
 }
 
 .App.modetwo .buttons {
     grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(4, 25%);
-    margin-left: 220px;
+    grid-template-columns: repeat(4, 23%);
+    margin-left: 190px;
     font-size: 20px;
 }
 
 .button-engineer {
     display: grid;
-    grid-template-columns: repeat(3, 28%);
+    grid-template-columns: repeat(3, 21%);
     grid-gap: 23px;
     position: absolute;
 }
 
 .mode button {
-    margin-left: 10px;
+    margin-left: 7px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-radius: 4px;
+    color: #555555;
+}
+
+.mode button:hover{
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0 none;
 }
 
 .App.modethree {
@@ -67,8 +91,8 @@
 }
 
 .App.modethree .buttons {
-    margin-left: 90px;
-    grid-template-rows: repeat(5, 25%);
+    margin-left: 77px;
+    grid-template-rows: repeat(5, 19%);
 }
 
 .button-programmer {
@@ -76,4 +100,36 @@
     grid-template-columns: repeat(1, 50%);
     grid-gap: 20px;
     position: absolute;
+}
+
+
+@media (max-width:440px) {
+    .button-engineer {
+        grid-template-columns:repeat(3, 16%);
+    }
+    .App.modetwo .buttons{
+        margin-left: 163px;
+        grid-template-columns:repeat(4, 22%);
+    }
+}
+
+@media (max-width:415px) {
+    .App.modetwo .Button{
+        width: 40px;
+        height: 40px;
+    }
+    .App.modetwo .buttons{
+        margin-left: 155px;
+        grid-template-rows: repeat(3, 20%);
+    }
+}
+
+@media (max-width:360px) {
+    .App.modetwo .buttons{
+        margin-left: 132px;
+        grid-template-rows: repeat(3, 20%);
+    }
+    .button-engineer {
+        grid-template-columns: repeat(3, 12%);
+    }
 }

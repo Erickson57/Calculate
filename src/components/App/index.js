@@ -145,13 +145,18 @@ const App = () => {
 
         // Режим - Инженер
         if (content === "sin") {
-            setValue(Math.sin(value).toString())
+            if (Math.sin(value).toString().length >= 7) {
+
+                setValue(Math.sin(value).toString().substring(0, 10))
+            } else {
+                setValue(Math.sin(value).toString())
+            }
             return;
         }
 
         if (content === "sin⁻¹") {
             if ((-1 <= value) && (value <= 1)) {
-                setValue(Math.asin(value).toString())
+                setValue(Math.asin(value).toString().substring(0, 10))
             } else {
                 alert('Недопустимый ввод, область определения функции arcsin x: −1 ≤ x ≤ 1.')
             }
@@ -159,18 +164,27 @@ const App = () => {
         }
 
         if (content === "π*x") {
-            setValue((Math.PI * value).toString())
+            if ((Math.PI * value).toString().length >= 7) {
+                setValue((Math.PI * value).toString().substring(0, 10))
+            } else {
+                setValue((Math.PI * value).toString())
+            }
             return;
         }
 
         if (content === "cos") {
-            setValue(Math.cos(value).toString())
+            if (Math.cos(value).toString().length >= 7) {
+
+                setValue(Math.cos(value).toString().substring(0, 10))
+            } else {
+                setValue(Math.cos(value).toString())
+            }
             return;
         }
 
         if (content === "cos⁻¹") {
             if ((-1 <= value) && (value <= 1)) {
-                setValue(Math.acos(value).toString())
+                setValue(Math.acos(value).toString().substring(0, 10))
             } else {
                 alert('Недопустимый ввод, область определения функции arcos x: −1 ≤ x ≤ 1.')
             }
@@ -178,37 +192,65 @@ const App = () => {
         }
 
         if (content === "tan") {
-            setValue(Math.tan(value).toString())
+            if (Math.tan(value).toString().length >= 7) {
+
+                setValue(Math.tan(value).toString().substring(0, 10))
+            } else {
+                setValue(Math.tan(value).toString())
+            }
             return;
         }
 
         if (content === "tan⁻¹") {
-            setValue(Math.atan(value).toString())
+            setValue(Math.atan(value).toString().substring(0, 10))
             return;
         }
 
         if (content === "exp") {
-            setValue(Math.exp(value).toString())
+            if (Math.exp(value).toString().length >= 7) {
+
+                setValue(Math.exp(value).toString().substring(0, 10))
+            } else {
+                setValue(Math.exp(value).toString())
+            }
             return;
         }
 
         if (content === "x²") {
-            setValue(Math.pow(value, 2).toString())
+            if (Math.pow(value, 2).toString().length >= 7) {
+                setValue(Math.pow(value, 2).toString().substring(0, 10))
+            } else {
+                setValue(Math.pow(value, 2).toString())
+            }
             return;
         }
 
         if (content === "x³") {
-            setValue(Math.pow(value, 3).toString())
+            if (Math.pow(value, 3).toString().length >= 7) {
+                setValue(Math.pow(value, 3).toString().substring(0, 10))
+            } else {
+                setValue(Math.pow(value, 3).toString())
+            }
             return;
         }
 
         if (content === "ln2") {
-            setValue(Math.log2(value).toString())
+            if (Math.log2(value).toString().length >= 7) {
+
+                setValue(Math.log2(value).toString().substring(0, 10))
+            } else {
+                setValue(Math.log2(value).toString())
+            }
             return;
         }
 
         if (content === "√") {
-            setValue((Math.sqrt(value)).toString())
+            if (Math.sqrt(value).toString().length >= 7) {
+
+                setValue(Math.sqrt(value).toString().substring(0, 10))
+            } else {
+                setValue(Math.sqrt(value).toString())
+            }
             return;
         }
 
@@ -243,13 +285,33 @@ const App = () => {
             if (!operator) return;
 
             if (operator === "+") {
-                setValue((memory + parseFloat(value)).toString())
+                if ((memory + parseFloat(value)).toString().length >= 7) {
+                    console.log((memory + value).toString())
+                    setValue((memory + parseFloat(value)).toString().substring(0, 10))
+                } else {
+                    setValue((memory + parseFloat(value)).toString())
+                }
             } else if (operator === "-") {
-                setValue((memory - parseFloat(value)).toString())
+                if ((memory - parseFloat(value)).toString().length >= 7) {
+                    console.log((memory - value).toString())
+                    setValue((memory - parseFloat(value)).toString().substring(0, 7))
+                } else {
+                    setValue((memory - parseFloat(value)).toString())
+                }
             } else if (operator === "×") {
-                setValue((memory * parseFloat(value)).toString())
+                if ((memory * parseFloat(value)).toString().length >= 7) {
+                    console.log((memory * value).toString())
+                    setValue((memory * parseFloat(value)).toString().substring(0, 7))
+                } else {
+                    setValue((memory * parseFloat(value)).toString())
+                }
             } else if (operator === "÷") {
-                setValue((memory / parseFloat(value)).toString())
+                if ((memory / parseFloat(value)).toString().length >= 7) {
+                    console.log((memory / value).toString())
+                    setValue((memory / parseFloat(value)).toString().substring(0, 7))
+                } else {
+                    setValue((memory / parseFloat(value)).toString())
+                }
             }
             setVivod("")
             setMemory(null)
@@ -362,8 +424,8 @@ const App = () => {
                 <Button onButtonClick={handleButtonPress} content="=" type="operator" />
 
             </div>
+            <Select clickButtonOne={clickUsual} clickButtonTwo={clickEngineer} clickButtonThree={clickProgrammer} />
         </div>
-        <Select clickButtonOne={clickUsual} clickButtonTwo={clickEngineer} clickButtonThree={clickProgrammer} />
     </div>
 }
 

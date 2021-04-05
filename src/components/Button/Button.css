@@ -8,10 +8,14 @@
     justify-content: center;
     cursor: pointer;
 }
-.Button.zero {
-    width: 110px;
+ .Button.zero {
+    width: 90%;
     grid-column: 1 / span 2;
     border-radius: 15px;
+}
+
+.App.modetwo .Button.zero{
+    width: 90%;
 }
 
 .Button.function {
