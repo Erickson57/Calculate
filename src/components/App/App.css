@@ -1,0 +1,79 @@
+.main {
+    display: flex;
+}
+
+.App {
+    max-width: 295px;
+    margin: 10px auto;
+    height: 90vh;
+    width: 100%;
+    background: black;
+    color: white;
+    border-radius: 10%;
+    padding: 12px;
+    position: relative;
+}
+.App.modetwo {
+    max-width: 500px;
+}
+
+.top {
+    position: absolute;
+    width: 180px;
+    height: 35px;
+    left: 35px;
+    background-color: brown;
+}
+
+.display {
+    font-size: 60px;
+    margin-bottom: 5px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 20px;
+    font-size: 20px;
+}
+.mode {
+    margin-right: 50px;
+}
+
+.App.modetwo .buttons {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 25%);
+    margin-left: 220px;
+    font-size: 20px;
+}
+
+.button-engineer {
+    display: grid;
+    grid-template-columns: repeat(3, 28%);
+    grid-gap: 23px;
+    position: absolute;
+}
+
+.mode button {
+    margin-left: 10px;
+}
+
+.App.modethree {
+    max-width: 370px;
+}
+
+.App.modethree .buttons {
+    margin-left: 90px;
+    grid-template-rows: repeat(5, 25%);
+}
+
+.button-programmer {
+    display: grid;
+    grid-template-columns: repeat(1, 50%);
+    grid-gap: 20px;
+    position: absolute;
+}

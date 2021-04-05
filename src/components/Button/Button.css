@@ -1,0 +1,40 @@
+.Button {
+    background: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.Button.zero {
+    width: 110px;
+    grid-column: 1 / span 2;
+    border-radius: 15px;
+}
+
+.Button.function {
+    color: black;
+    background: #a5a5a5;
+}
+
+.Button.operator {
+    background: #f1a33c;
+}
+
+.engineer {
+    display: none;
+}
+
+.engineer.active {
+    display: flex;
+}
+
+.programmer {
+    display: none;
+}
+
+.programmer.active {
+    display: flex;
+}
