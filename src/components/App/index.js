@@ -147,7 +147,7 @@ const App = () => {
         if (content === "sin") {
             if (Math.sin(value).toString().length >= 7) {
 
-                setValue(Math.sin(value).toString().substring(0, 10))
+                setValue(Math.sin(value).toString().substring(0, 16))
             } else {
                 setValue(Math.sin(value).toString())
             }
@@ -156,7 +156,7 @@ const App = () => {
 
         if (content === "sin⁻¹") {
             if ((-1 <= value) && (value <= 1)) {
-                setValue(Math.asin(value).toString().substring(0, 10))
+                setValue(Math.asin(value).toString().substring(0, 16))
             } else {
                 alert('Недопустимый ввод, область определения функции arcsin x: −1 ≤ x ≤ 1.')
             }
@@ -165,7 +165,7 @@ const App = () => {
 
         if (content === "π*x") {
             if ((Math.PI * value).toString().length >= 7) {
-                setValue((Math.PI * value).toString().substring(0, 10))
+                setValue((Math.PI * value).toString().substring(0, 16))
             } else {
                 setValue((Math.PI * value).toString())
             }
@@ -175,7 +175,7 @@ const App = () => {
         if (content === "cos") {
             if (Math.cos(value).toString().length >= 7) {
 
-                setValue(Math.cos(value).toString().substring(0, 10))
+                setValue(Math.cos(value).toString().substring(0, 16))
             } else {
                 setValue(Math.cos(value).toString())
             }
@@ -184,7 +184,7 @@ const App = () => {
 
         if (content === "cos⁻¹") {
             if ((-1 <= value) && (value <= 1)) {
-                setValue(Math.acos(value).toString().substring(0, 10))
+                setValue(Math.acos(value).toString().substring(0, 16))
             } else {
                 alert('Недопустимый ввод, область определения функции arcos x: −1 ≤ x ≤ 1.')
             }
@@ -194,7 +194,7 @@ const App = () => {
         if (content === "tan") {
             if (Math.tan(value).toString().length >= 7) {
 
-                setValue(Math.tan(value).toString().substring(0, 10))
+                setValue(Math.tan(value).toString().substring(0, 16))
             } else {
                 setValue(Math.tan(value).toString())
             }
@@ -202,14 +202,14 @@ const App = () => {
         }
 
         if (content === "tan⁻¹") {
-            setValue(Math.atan(value).toString().substring(0, 10))
+            setValue(Math.atan(value).toString().substring(0, 16))
             return;
         }
 
         if (content === "exp") {
             if (Math.exp(value).toString().length >= 7) {
 
-                setValue(Math.exp(value).toString().substring(0, 10))
+                setValue(Math.exp(value).toString().substring(0, 16))
             } else {
                 setValue(Math.exp(value).toString())
             }
@@ -218,7 +218,7 @@ const App = () => {
 
         if (content === "x²") {
             if (Math.pow(value, 2).toString().length >= 7) {
-                setValue(Math.pow(value, 2).toString().substring(0, 10))
+                setValue(Math.pow(value, 2).toString().substring(0, 16))
             } else {
                 setValue(Math.pow(value, 2).toString())
             }
@@ -227,7 +227,7 @@ const App = () => {
 
         if (content === "x³") {
             if (Math.pow(value, 3).toString().length >= 7) {
-                setValue(Math.pow(value, 3).toString().substring(0, 10))
+                setValue(Math.pow(value, 3).toString().substring(0, 15))
             } else {
                 setValue(Math.pow(value, 3).toString())
             }
@@ -237,7 +237,7 @@ const App = () => {
         if (content === "ln2") {
             if (Math.log2(value).toString().length >= 7) {
 
-                setValue(Math.log2(value).toString().substring(0, 10))
+                setValue(Math.log2(value).toString().substring(0, 16))
             } else {
                 setValue(Math.log2(value).toString())
             }
@@ -247,7 +247,7 @@ const App = () => {
         if (content === "√") {
             if (Math.sqrt(value).toString().length >= 7) {
 
-                setValue(Math.sqrt(value).toString().substring(0, 10))
+                setValue(Math.sqrt(value).toString().substring(0, 16))
             } else {
                 setValue(Math.sqrt(value).toString())
             }
@@ -256,7 +256,11 @@ const App = () => {
 
         //Режим - Программист
         if (content === "BIN") {
-            setValue(parseInt(value).toString(2))
+            if (parseInt(value).toString(2).length >= 7) {
+                setValue(parseInt(value).toString(2).substring(0, 12))
+            } else {
+                setValue(parseInt(value).toString(2))
+            }
             return;
         }
 
@@ -287,28 +291,28 @@ const App = () => {
             if (operator === "+") {
                 if ((memory + parseFloat(value)).toString().length >= 7) {
                     console.log((memory + value).toString())
-                    setValue((memory + parseFloat(value)).toString().substring(0, 10))
+                    setValue((memory + parseFloat(value)).toString().substring(0, 14))
                 } else {
                     setValue((memory + parseFloat(value)).toString())
                 }
             } else if (operator === "-") {
                 if ((memory - parseFloat(value)).toString().length >= 7) {
                     console.log((memory - value).toString())
-                    setValue((memory - parseFloat(value)).toString().substring(0, 7))
+                    setValue((memory - parseFloat(value)).toString().substring(0, 14))
                 } else {
                     setValue((memory - parseFloat(value)).toString())
                 }
             } else if (operator === "×") {
                 if ((memory * parseFloat(value)).toString().length >= 7) {
                     console.log((memory * value).toString())
-                    setValue((memory * parseFloat(value)).toString().substring(0, 7))
+                    setValue((memory * parseFloat(value)).toString().substring(0, 9))
                 } else {
                     setValue((memory * parseFloat(value)).toString())
                 }
             } else if (operator === "÷") {
                 if ((memory / parseFloat(value)).toString().length >= 7) {
                     console.log((memory / value).toString())
-                    setValue((memory / parseFloat(value)).toString().substring(0, 7))
+                    setValue((memory / parseFloat(value)).toString().substring(0, 9))
                 } else {
                     setValue((memory / parseFloat(value)).toString())
                 }
